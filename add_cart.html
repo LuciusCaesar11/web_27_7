@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="css/add_cart.css" rel="stylesheet"> 
+    <link rel="icon" href="img/img_design/logo.png">   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+     <!------------ Header ------------>
+     <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="menu.html" class="logo">MENU</a>
+            <!-- Cart icon -->
+            <i class='bx bx-cart-alt' id="cart-icon"></i>
+            <!-- Cart -->
+            <div class="cart">
+                <h2 class="cart-title">GIỎ HÀNG</h2>
+                <div class="cart-items">
+                    <!-- Content -->
+                    <div class="cart-content">
+                        
+                    </div>
+                </div>
+             
+                <!---------- Total ------------>
+                <div class="total">
+                    <div class="total-title">Total</div>
+                    <div class="total-price">0 đ</div>
+                </div>
+                <!---------- Buy Button ------------>
+                <button type="button" class="btn-buy">Buy Now</button>
+                <!---------- Cart Close ------------>
+                <i class='bx bx-x' id="close-cart"></i>
+                
+                
+            </div>
+        </div>
+    </header>
+     
+    <div id="b-to-top"></div>
+
+    <!------------ Shop ------------>
+    <section class="shop container">
+        <h2 class="section-title"> CAFE PHIN</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!--  Box 1 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/phin/bac-xiu-da.jpg" alt="" class="product-img">
+                <h2 class="product-title">BẠC XỈU ĐÁ</h2>
+                <span class="price">30000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            
+            <!--  Box 2 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/phin/cf_sua.webp" alt="" class="product-img">
+                <h2 class="product-title">CAFE SỮA</h2>
+                <span class="price">25000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 3 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/phin/ca-phe-den-da.png" alt="" class="product-img">
+                <h2 class="product-title">CAFE ĐEN</h2>
+                <span class="price">20000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 4 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/phin/cf_muoi.webp" alt="" class="product-img">
+                <h2 class="product-title">CAFE MUỐI</h2>
+                <span class="price">35000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>            
+    </section>
+
+    <section class="shop container">
+        <h2 class="section-title"> CAFE MÁY</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!--  Box 1 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/pha máy/espresso.jpg" alt="" class="product-img">
+                <h2 class="product-title">ESPRESSO</h2>
+                <span class="price">40000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            
+            <!--  Box 2 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/pha máy/cappu.jpg" alt="" class="product-img">
+                <h2 class="product-title">CAPPUCCINO</h2>
+                <span class="price">60000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 3 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/pha máy/latte.jpg" alt="" class="product-img">
+                <h2 class="product-title">LATTE</h2>
+                <span class="price">60000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 4 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/pha máy/mocha.png" alt="" class="product-img">
+                <h2 class="product-title">MOCHA</h2>
+                <span class="price">55000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>            
+    </section>
+
+    <section class="shop container" >
+        <h2 class="section-title"> TRÀ</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!--  Box 1 -->
+            <div class="product-box" id="tea">
+                <img src="img/img_design/COFFEE/trà/sen.webp" alt="" class="product-img">
+                <h2 class="product-title">TRÀ SEN</h2>
+                <span class="price">40000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            
+            <!--  Box 2 -->
+            <div class="product-box" id="tea">
+                <img src="img/img_design/COFFEE/trà/dao.jpg" alt="" class="product-img">
+                <h2 class="product-title">TRÀ ĐÀO</h2>
+                <span class="price">40000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 3 -->
+            <div class="product-box" id="tea">
+                <img src="img/img_design/COFFEE/trà/vải.jpg" alt="" class="product-img">
+                <h2 class="product-title">TRÀ VẢI</h2>
+                <span class="price">40000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>            
+    </section>
+
+    <section class="shop container">
+        <h2 class="section-title"> ĐÁ XAY</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!--  Box 1 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/đá xay/cf_dx.jpg" alt="" class="product-img">
+                <h2 class="product-title">CAFE ĐÁ XAY</h2>
+                <span class="price">45000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            
+            <!--  Box 2 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/đá xay/choco.jpg" alt="" class="product-img">
+                <h2 class="product-title">CHOCO ĐÁ XAY</h2>
+                <span class="price">45000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 3 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/đá xay/cookie_da.jpg" alt="" class="product-img">
+                <h2 class="product-title">COOKIE ĐÁ XAY</h2>
+                <span class="price">45000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 4 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/đá xay/matcha-da-xay.jpg" alt="" class="product-img">
+                <h2 class="product-title">MATCHA ĐÁ XAY</h2>
+                <span class="price">45000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>            
+    </section>
+
+    <section class="shop container">
+        <h2 class="section-title"> BÁNH NGỌT</h2>
+        <!-- Content -->
+        <div class="shop-content">
+            <!--  Box 1 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/cake/tira.jpg" alt="" class="product-img">
+                <h2 class="product-title">TIRAMISU</h2>
+                <span class="price">25000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            
+            <!--  Box 2 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/cake/red.jpg" alt="" class="product-img">
+                <h2 class="product-title">REDVELVET</h2>
+                <span class="price">25000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 3 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/cake/passion.webp" alt="" class="product-img">
+                <h2 class="product-title">MOUSSE CHANH DÂY</h2>
+                <span class="price">25000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>
+            <!--  Box 4 -->
+            <div class="product-box">
+                <img src="img/img_design/COFFEE/cake/choco mana.jpg" alt="" class="product-img">
+                <h2 class="product-title">CHOCO MANA</h2>
+                <span class="price">35000</span>
+                <i class='bx bx-cart-add add-cart' ></i>
+            </div>            
+    </section>
+
+    <div class="go_top">
+        <a href="#b-to-top"><i class='bx bx-up-arrow-alt' ></i></a>
+   </div>
+    <section id="contact">
+        <div class="footer">
+            <div class="main">
+                <div class="col" >
+                    <h4>Menu Links</h4>
+                    <div>
+                        <ul>
+                            <li><a href="home.html">Quán cà phê</a></li>
+                            <li><a href="menu.html">Thực đơn</a></li>
+                            <li><a href="info">Tin tức</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col" >
+                    <h4 class="none">-----------</h4>
+                    <div>
+                        <ul>
+                        
+                            <li><a href="about_us.html">Về chúng tôi</a></li>
+                            <li><a href="jobs">Nghề nghiệp</a></li>
+                            <li><a href="buynow.html">Mua ngay</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col" >
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Delivery Information</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+
+                <div class="col" >
+                    <h4>Contact Us</h4>
+                    <div class="social">
+                        <a href="#"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#"><i class='bx bxl-instagram' ></i></a>
+                        <a href="#"><i class='bx bxl-twitter' ></i></a>
+                        <a href="#"><i class='bx bxl-youtube' ></i></a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </section>
+
+    <script src="js/add_cart.js"></script>
+</body>
+</html>
