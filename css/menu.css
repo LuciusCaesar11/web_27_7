@@ -68,7 +68,10 @@ html{
     font-size: 22px;
     border-radius: 50%;
 }
-         
+.go_top a{
+    font-size: 30px;
+}
+
 /* -------------FOOTER----------------- */
 .main{
     display:flex;
