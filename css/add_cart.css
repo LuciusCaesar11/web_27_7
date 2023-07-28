@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 *{
-    font-family: "Poppins", sans-serif;
-    margin:0;
     padding:0;
-    scroll-padding-top: 2rem;
+    margin:0;
+    box-sizing:border-box;
     scroll-behavior: smooth;
-    box-sizing: border-box;
-    list-style: none;
+    list-style:none;
     text-decoration: none;
+    font-family: "REM";
 }
 :root{
     --main-color:#fd4646;
@@ -71,7 +71,7 @@ header{
     
 }  
 .cart-items{
-    height:500px;
+    height:450px;
     overflow:auto;
     overflow-x:hidden;
 
@@ -238,11 +238,12 @@ header{
 .main{
     display:flex;
     flex-wrap: wrap;
+    margin:0 100px;;
 
 }
 
 .footer{
-    padding: 10px 17%;
+    padding: 10px 10%;
     
 }
 
