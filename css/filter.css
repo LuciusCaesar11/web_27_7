@@ -10,6 +10,148 @@ body{
     scroll-behavior: smooth;
 }
 
+/* ---- Cart ---- */
+.btn_exit{
+    position: absolute;
+    top:0;
+    left: 100%;
+}
+
+.wrap_checkout{
+    position: absolute;
+    bottom: 10%;
+    left:5%;
+    width:90%;
+}
+
+.wrapper_cart{
+    position: fixed;
+    top:0;
+    right:-100%;
+    width:480px;
+    min-height: 100vh;
+    padding:20px; 
+    background: #fff;
+    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+    transition:.5s;
+    border: 1px solid #aea5a5;
+    border-radius: 6px;
+}  
+
+.cart_zone{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Đảm bảo các cart-items được căn theo chiều ngang */
+    overflow-y: auto; /* Thêm thanh trượt khi có quá nhiều cart-items */
+    max-height: 60vh;
+}
+.cart-items{
+    display: block;
+    border-bottom: 1px solid rgb(255, 210, 206);
+    padding: 2px;
+} 
+
+.wrapper_cart.active{
+    right:0px;
+}
+
+.cart-title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top:2rem;
+    color:#ff702a;
+}
+
+/* Additional style for the image container */
+.cart-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Add padding to create spacing around the image */
+    border-color: #b5313a;
+  }
+  
+  /* Style for the image itself */
+.cart-img {
+    max-height: 150px; /* Adjust this value to your preference */
+    width: 200px; /* Ensure the width scales proportionally with the height */
+    object-fit: cover;
+}
+  
+.cart-product-title{
+    font-size: 12px;
+}
+
+.detail-box{
+    margin-left: 20px;
+}
+
+.detail-box input[type="number"]{
+    width:30%;
+}
+  /* Optional: Style the total section */
+.total {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #000;
+    padding:10px 100px;
+    margin-left: auto;
+}
+
+.total-price{
+    color: #ff702a;
+}
+
+.box-trash{
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.box-trash i{
+    color: #ff702a;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.btn_checkout{
+    margin: 0 auto;
+}
+
+
+.cart-product-title, .cart-price{
+    font-weight: bold;
+}
+
+  /* Optional: Style the buy button */
+  .btn-buy {
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    background: #1e1c2a;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-buy:hover {
+    background: #ff702a;
+    color: #fff;
+  }
+  
+  #close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+  }
+
+
 .loading 
 {
     top:0;
@@ -992,3 +1134,36 @@ header{
 .list1 ul li:hover a{
     color:#fff
 }
+
+
+/* cho page intro */
+.intro{
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.wrap_intro{
+    margin: 0 auto;
+    width: 80%;
+    font-size: 12px;
+}
+
+/* ... */
+html{
+    scroll-behavior: smooth;
+}
+.go_top{
+    position:fixed;
+    width:50px;
+    height:50px;
+    background:#ff702a;
+    bottom:40px;
+    right:10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    font-size: 22px;
+    border-radius: 50%;
+};
