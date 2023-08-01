@@ -1,10 +1,9 @@
 const loadingElement = document.getElementById('loading');
-
+var timeEvent="2023-08-15T00:00:00Z";
 // Hàm để xóa hiệu ứng loading
 function removeLoading() {
   loadingElement.remove();
 }
-
 // Gọi hàm xóa loading sau 3 giây
 setTimeout(removeLoading, 2000);
 
@@ -113,52 +112,6 @@ button1.addEventListener('click', function() {
     }, 1000);
 }) ;
 
-//js cho event flash sale timer
-// Đặt ngày đích mà bạn muốn đếm ngược đến
-  var targetDate = new Date("2023-08-01T00:00:00Z");
-
-// Lấy các phần tử div cho ngày, giờ, phút và giây
-var daysElements = document.querySelectorAll(".box_days span");
-var hoursElements = document.querySelectorAll(".box_hours span");
-var minsElements = document.querySelectorAll(".box_mins span");
-var secsElements = document.querySelectorAll(".box_secs span");
-
-// Gán sự kiện updateCountdown cho từng phần tử
-for (var i = 0; i < daysElements.length; i++) {
-  var daysElement = daysElements[i];
-  var hoursElement = hoursElements[i];
-  var minsElement = minsElements[i];
-  var secsElement = secsElements[i];
-
-  setInterval(updateCountdown, 1000, daysElement, hoursElement, minsElement, secsElement);
-}
-
-function updateCountdown(daysElement, hoursElement, minsElement, secsElement) {
-  // Lấy thời gian hiện tại
-  var currentDate = new Date();
-
-  // Tính toán số giây còn lại
-  var totalSeconds = Math.floor((targetDate - currentDate) / 1000);
-
-  // Tính toán số ngày, giờ, phút và giây còn lại
-  var days = Math.floor(totalSeconds / (3600 * 24));
-  var hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-  var mins = Math.floor((totalSeconds % 3600) / 60);
-  var secs = Math.floor(totalSeconds % 60);
-
-    // Hiển thị số ngày, giờ, phút và giây trên giao diện
-  daysElement.textContent = formatTime(days);
-  hoursElement.textContent = formatTime(hours);
-  minsElement.textContent = formatTime(mins);
-  secsElement.textContent = formatTime(secs);
-}
-
-function formatTime(time) {
-  // Định dạng thời gian thành chuỗi hai chữ số (vd: 05)
-  return time < 10 ? "0" + time : time;
-}
-
-
 
 document.addEventListener('DOMContentLoaded', function() {
     const productsContainers = document.querySelectorAll('.products');
@@ -191,289 +144,327 @@ document.addEventListener('DOMContentLoaded', function() {
       };
     });
 });
-    
-document.addEventListener("DOMContentLoaded", function() {
-  // Hàm hiển thị nội dung sản phẩm bán chạy nhất
-  function showBestSellingProducts(products) {
-    // Các mã HTML và xử lý dữ liệu không thay đổi
+
+document.addEventListener("DOMContentLoaded", function () {
+  let cartIcon = document.querySelector(".cart");
+  let wrappercart = document.querySelector(".wrapper_cart");
+  let closeCart = document.querySelector("#close-cart");
+  let cartZone = document.querySelector(".cart_zone"); // Thêm khai báo cho cartZone
+  let cartItems = [];
+
+  // Mở giỏ hàng khi click vào biểu tượng giỏ hàng
+  cartIcon.onclick = () => {
+    console.log("Cart icon clicked");
+    wrappercart.classList.add("active");
+  };
+
+  // Đóng giỏ hàng khi click vào nút đóng
+  closeCart.onclick = () => {
+    console.log("Close button clicked");
+    wrappercart.classList.remove("active");
+  };
+
+  // Hiển thị danh sách sản phẩm đang sale
+  function showFlashSaleProducts(products) {
     const flashSale = document.getElementById("add1");
-  let html = "";
-  products.forEach((product) => {
-    html += `
-    <div class="product">
-            <img src="${product.image_link}" alt="">
-            <div class="content">
-              <a href="">${product.content}</a>
-              <div class="price">
-                <div class="text_content1">
-                  <p>${product.text_content1}</p>
-                </div>
-                <div class="text_content2">
-                  <p>${product.text_content2}</p>
-                </div>
-              </div>
-              <div class="judgement">
-                <ul>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li>|</li>
-                  <li><i class="fa-solid fa-cart-shopping"></i></li>
-                </ul>
-              </div>
+    let html = "";
+    products.forEach((product) => {
+      html += `
+      <!-- Mã HTML của sản phẩm bán chạy nhất -->
+      <div class="product">
+        <img src="${product.image_link}" alt="">
+        <div class="content">
+          <a href="">${product.content}</a>
+          <div class="price">
+            <div class="text_content1">
+              <p>${product.text_content1}</p>
             </div>
-            <div class="timer" id="fixed">
-              <div class="days">
-                <div class="box_days">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="hours">
-                <div class="box_hours">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="mins">
-                <div class="box_mins">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="secs">
-                <div class="box_secs">
-                  <span>00</span>
-                </div>
-              </div>
+            <div class="text_content2">
+              <p>${product.text_content2}</p>
             </div>
-            <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
           </div>
-  `;
-  });
-  flashSale.innerHTML = html;
+          <div class="judgement">
+            <ul>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li>|</li>
+              <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timer" id="fixed">
+          <div class="days">
+            <div class="box_days">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="hours">
+            <div class="box_hours">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="mins">
+            <div class="box_mins">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="secs">
+            <div class="box_secs">
+              <span>00</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
+      </div>
+      `;
+    });
+    flashSale.innerHTML = html;
+
+    const addToCartButtons = document.querySelectorAll(".btn_rightnow");
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", addCartClicked);
+    });
   }
 
-  // Hàm hiển thị nội dung sản phẩm tiêu dùng
-  function showbestSellingProducts(products) {
-    // Các mã HTML và xử lý dữ liệu không thay đổi
-    const bestSellingProductsDiv = document.getElementById("add2");
-  let html = "";
-  products.forEach((product) => {
-    html += `
-    <div class="product">
-            <img src="${product.image_link}" alt="">
-            <div class="content">
-              <a href="">${product.content}</a>
-              <div class="price">
-                <div class="text_content1">
-                  <p>${product.text_content1}</p>
-                </div>
-                <div class="text_content2">
-                  <p>${product.text_content2}</p>
-                </div>
-              </div>
-              <div class="judgement">
-                <ul>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li>|</li>
-                  <li><i class="fa-solid fa-cart-shopping"></i></li>
-                </ul>
-              </div>
+    // Hiển thị danh sách sản phẩm bán chạy nhất
+  function showBestSellingProducts(products) {
+    const bestsell = document.getElementById("add2");
+    let html = "";
+    products.forEach((product) => {
+      html += `
+      <!-- Mã HTML của sản phẩm bán chạy nhất -->
+      <div class="product">
+        <img src="${product.image_link}" alt="">
+        <div class="content">
+          <a href="">${product.content}</a>
+          <div class="price">
+            <div class="text_content1">
+              <p>${product.text_content1}</p>
             </div>
-            <div class="timer" id="fixed">
-              <div class="days">
-                <div class="box_days">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="hours">
-                <div class="box_hours">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="mins">
-                <div class="box_mins">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="secs">
-                <div class="box_secs">
-                  <span>00</span>
-                </div>
-              </div>
+            <div class="text_content2">
+              <p>${product.text_content2}</p>
             </div>
-            <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
           </div>
-    `;
-  });
-  bestSellingProductsDiv.innerHTML = html;
+          <div class="judgement">
+            <ul>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li>|</li>
+              <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timer" id="fixed">
+          <div class="days">
+            <div class="box_days">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="hours">
+            <div class="box_hours">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="mins">
+            <div class="box_mins">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="secs">
+            <div class="box_secs">
+              <span>00</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
+      </div>
+      `;
+    });
+    bestsell.innerHTML = html;
+
+    const addToCartButtons = document.querySelectorAll(".btn_rightnow");
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", addCartClicked);
+    });
   }
 
-  function showCoffeeRoasted(products) {
-    // Các mã HTML và xử lý dữ liệu không thay đổi
-    const caferangxay = document.getElementById("add3");
-  let html = "";
-  products.forEach((product) => {
-    html += `
-    <div class="product">
-            <img src="${product.image_link}" alt="">
-            <div class="content">
-              <a href="">${product.content}</a>
-              <div class="price">
-                <div class="text_content1">
-                  <p>${product.text_content1}</p>
-                </div>
-                <div class="text_content2">
-                  <p>${product.text_content2}</p>
-                </div>
-              </div>
-              <div class="judgement">
-                <ul>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li>|</li>
-                  <li><i class="fa-solid fa-cart-shopping"></i></li>
-                </ul>
-              </div>
+  // Hiển thị danh sách sản phẩm cà phê rang xay
+  function showRoastedCoffeeProducts(products) {
+    const coffee = document.getElementById("add3");
+    let html = "";
+    products.forEach((product) => {
+      html += `
+      <!-- Mã HTML của sản phẩm bán chạy nhất -->
+      <div class="product">
+        <img src="${product.image_link}" alt="">
+        <div class="content">
+          <a href="">${product.content}</a>
+          <div class="price">
+            <div class="text_content1">
+              <p>${product.text_content1}</p>
             </div>
-            <div class="timer" id="fixed">
-              <div class="days">
-                <div class="box_days">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="hours">
-                <div class="box_hours">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="mins">
-                <div class="box_mins">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="secs">
-                <div class="box_secs">
-                  <span>00</span>
-                </div>
-              </div>
+            <div class="text_content2">
+              <p>${product.text_content2}</p>
             </div>
-            <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
           </div>
-  `;
-  });
-  caferangxay.innerHTML = html;
-  }
-
-
-  function consumptionProduct(products) {
-    // Các mã HTML và xử lý dữ liệu không thay đổi
-    const consumptionProducts = document.getElementById("add4");
-  let html = "";
-  products.forEach((product) => {
-    html += `
-    <div class="product">
-            <img src="${product.image_link}" alt="">
-            <div class="content">
-              <a href="">${product.content}</a>
-              <div class="price">
-                <div class="text_content1">
-                  <p>${product.text_content1}</p>
-                </div>
-                <div class="text_content2">
-                  <p>${product.text_content2}</p>
-                </div>
-              </div>
-              <div class="judgement">
-                <ul>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li><i class="fa-regular fa-star"></i></li>
-                  <li>|</li>
-                  <li><i class="fa-solid fa-cart-shopping"></i></li>
-                </ul>
-              </div>
-            </div>
-            <div class="timer" id="fixed">
-              <div class="days">
-                <div class="box_days">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="hours">
-                <div class="box_hours">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="mins">
-                <div class="box_mins">
-                  <span>00</span>
-                </div>
-                <div class="wrapper_dot">
-                  <span>:</span>
-                </div>
-              </div>
-              <div class="secs">
-                <div class="box_secs">
-                  <span>00</span>
-                </div>
-              </div>
-            </div>
-            <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
+          <div class="judgement">
+            <ul>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li>|</li>
+              <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
           </div>
-  `;
-  });
-  consumptionProducts.innerHTML = html;
-  }
+        </div>
+        <div class="timer" id="fixed">
+          <div class="days">
+            <div class="box_days">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="hours">
+            <div class="box_hours">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="mins">
+            <div class="box_mins">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="secs">
+            <div class="box_secs">
+              <span>00</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
+      </div>
+      `;
+    });
+    coffee.innerHTML = html;
 
-  // Hàm định dạng thời gian thành chuỗi hai chữ số
+    const addToCartButtons = document.querySelectorAll(".btn_rightnow");
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", addCartClicked);
+    });
+  }
+  // Hiển thị danh sách sản phẩm tiêu dùng
+  function showConsumptionProducts(products) {
+    const consume = document.getElementById("add4");
+    let html = "";
+    products.forEach((product) => {
+      html += `
+      <!-- Mã HTML của sản phẩm bán chạy nhất -->
+      <div class="product">
+        <img src="${product.image_link}" alt="">
+        <div class="content">
+          <a href="">${product.content}</a>
+          <div class="price">
+            <div class="text_content1">
+              <p>${product.text_content1}</p>
+            </div>
+            <div class="text_content2">
+              <p>${product.text_content2}</p>
+            </div>
+          </div>
+          <div class="judgement">
+            <ul>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li><i class="fa-regular fa-star"></i></li>
+              <li>|</li>
+              <li><i class="fa-solid fa-cart-shopping"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="timer" id="fixed">
+          <div class="days">
+            <div class="box_days">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="hours">
+            <div class="box_hours">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="mins">
+            <div class="box_mins">
+              <span>00</span>
+            </div>
+            <div class="wrapper_dot">
+              <span>:</span>
+            </div>
+          </div>
+          <div class="secs">
+            <div class="box_secs">
+              <span>00</span>
+            </div>
+          </div>
+        </div>
+        <button class="btn_rightnow"><i class="fa-solid fa-bag-shopping"></i> Chọn mua</button>
+      </div>
+      `;
+    });
+    consume.innerHTML = html;
+
+    const addToCartButtons = document.querySelectorAll(".btn_rightnow");
+    addToCartButtons.forEach((button) => {
+      button.addEventListener("click", addCartClicked);
+    });
+  }
+  
+  // Thêm số 0 vào đầu chuỗi nếu số nhỏ hơn 10
   function formatTime(time) {
     return time < 10 ? "0" + time : time;
   }
 
-  // Hàm cập nhật đồng hồ đếm ngược
+  // Cập nhật thời gian còn lại cho sản phẩm trong flash sale
   function updateCountdown(targetDate, daysElement, hoursElement, minsElement, secsElement) {
     var currentDate = new Date();
     var totalSeconds = Math.floor((targetDate - currentDate) / 1000);
@@ -488,89 +479,181 @@ document.addEventListener("DOMContentLoaded", function() {
     secsElement.textContent = formatTime(secs);
   }
 
-  // Lấy dữ liệu từ tệp JSON và hiển thị lên trang
-  fetch("./json/dbBuyNow_bestSelling.json")
-    .then(response => response.json())
-    .then(data => {
-      showBestSellingProducts(data.products);
-
-      var targetDate = new Date("2023-08-01T00:00:00Z");
-      var daysElements = document.querySelectorAll(".box_days span");
-      var hoursElements = document.querySelectorAll(".box_hours span");
-      var minsElements = document.querySelectorAll(".box_mins span");
-      var secsElements = document.querySelectorAll(".box_secs span");
-
-      function updateCountdownForEachProduct() {
-        daysElements.forEach((daysElement, index) => {
-          const hoursElement = hoursElements[index];
-          const minsElement = minsElements[index];
-          const secsElement = secsElements[index];
-          updateCountdown(targetDate, daysElement, hoursElement, minsElement, secsElement);
-        });
-      }
-
-      setInterval(updateCountdownForEachProduct, 1000);
-    })
-    .catch(error => console.error('Error fetching best selling products:', error));
+  // Thêm sản phẩm vào giỏ hàng khi click vào nút "Chọn mua"
+  function addCartClicked(event) {
+    var button = event.target;
+    var cartItem = button.closest(".product");
   
-  fetch("./json/dbBuyNow_FlashSale.json")
-    .then(response => response.json())
-    .then(data => {
-      showbestSellingProducts(data.products);
-
-      var targetDate = new Date("2023-08-01T00:00:00Z");
-      var daysElements = document.querySelectorAll(".timer .box_days span");
-      var hoursElements = document.querySelectorAll(".timer .box_hours span");
-      var minsElements = document.querySelectorAll(".timer .box_mins span");
-      var secsElements = document.querySelectorAll(".timer .box_secs span");
-
-      function updateCountdownForEachProduct() {
-        daysElements.forEach((daysElement, index) => {
-          const hoursElement = hoursElements[index];
-          const minsElement = minsElements[index];
-          const secsElement = secsElements[index];
-          updateCountdown(targetDate, daysElement, hoursElement, minsElement, secsElement);
-        });
-      }
-
-      setInterval(updateCountdownForEachProduct, 1000);
-    })
-    .catch(error => console.error('Error fetching consumption products:', error));
-
-  fetch("./json/dbBuyNow_RoastedCoffee.json")
-  .then(response => response.json())
-  .then(data => {
-    showCoffeeRoasted(data.products);
-
-    var targetDate = new Date("2023-08-01T00:00:00Z");
-    var daysElements = document.querySelectorAll(".box_days span");
-    var hoursElements = document.querySelectorAll(".box_hours span");
-    var minsElements = document.querySelectorAll(".box_mins span");
-    var secsElements = document.querySelectorAll(".box_secs span");
-
-    function updateCountdownForEachProduct() {
-      daysElements.forEach((daysElement, index) => {
-        const hoursElement = hoursElements[index];
-        const minsElement = minsElements[index];
-        const secsElement = secsElements[index];
-        updateCountdown(targetDate, daysElement, hoursElement, minsElement, secsElement);
-      });
+    if (!cartItem) {
+      console.error("Error: Cart item not found");
+      return;
     }
+  
+    var titleElement = cartItem.querySelector(".content a");
+    var priceElement = cartItem.querySelector(".price p");
+    var productImgElement = cartItem.querySelector("img");
+  
+    if (!titleElement || !priceElement || !productImgElement) {
+      console.error("Error: Missing product information");
+      return;
+    }
+  
+    var title = titleElement.innerText;
+    var priceString = priceElement.innerText;
+    var productImg = productImgElement.getAttribute("src");
+  
+    // Thêm sản phẩm vào giỏ hàng với giá gốc
+    addToCart(title, priceString, productImg, priceString);
+  }
 
-    setInterval(updateCountdownForEachProduct, 1000);
-  })
-  .catch(error => console.error('Error fetching best selling products:', error));
+  // Cập nhật giá tiền tương ứng với số lượng sản phẩm
+  function updateCartItemPrice(inputElement) {
+    const cartContent = inputElement.closest(".cart-content");
+    const title = cartContent.querySelector(".cart-product-title").innerText;
+    const priceString = cartContent.querySelector(".cart-price").innerText.replace("đ", "").replace(".", "").replace(",", ".");
+    const price = parseFloat(priceString);
+    const quantity = parseInt(inputElement.value);
 
+    if (!isNaN(price) && !isNaN(quantity) && price > 0 && quantity > 0) {
+      const totalPrice = price * quantity;
+      cartContent.querySelector(".cart-price").innerText = totalPrice.toLocaleString("vi-VN") + " đ";
+    } else {
+      console.error("Error: Invalid price or quantity for item: " + title);
+    }
+    updateTotal();
+  }
 
+  // Thay đổi số lượng sản phẩm trong giỏ hàng
+function quantityChanged(inputElement, title) {
+  const quantity = parseInt(inputElement.value);
+  const item = cartItems.find((item) => item.title === title);
+  if (item) {
+    item.quantity = quantity;
+    updateTotal(); // Cập nhật tổng số tiền khi số lượng sản phẩm thay đổi
+  }
+}
 
+  // Xóa sản phẩm khỏi giỏ hàng
+  function removeCartItem(title) {
+    cartItems = cartItems.filter((item) => item.title !== title);
+    displayCart();
+    updateTotal();
+  }
 
+  // Hiển thị giỏ hàng
+  function displayCart() {
+    cartZone.innerHTML = ""; // Xóa hết nội dung cũ của cartZone
 
-  fetch("./json/dbBuyNow_ConsumptionProducts.json")
-    .then(response => response.json())
-    .then(data => {
-      consumptionProduct(data.products);
+    cartItems.forEach((item) => {
+      addToCartZone(item); // Thêm từng sản phẩm vào cartZone
+    });
+  }
 
-      var targetDate = new Date("2023-08-01T00:00:00Z");
+  // Thêm sản phẩm vào giỏ hàng
+function addToCart(title, price, productImg, originalPrice) {
+  console.log("Adding item to cart:", title, price, productImg);
+
+  // Kiểm tra xem giá gốc đã chuyển đổi thành số hợp lệ chưa
+  const numericOriginalPrice = convertPriceToNumber(originalPrice);
+  if (isNaN(numericOriginalPrice) || numericOriginalPrice <= 0) {
+    console.error("Error: Invalid original price for item: " + title);
+    return;
+  }
+
+  var existingItemIndex = cartItems.findIndex((item) => item.title === title);
+  if (existingItemIndex !== -1) {
+    cartItems[existingItemIndex].quantity++;
+  } else {
+    var newItem = { title, price, productImg, originalPrice, quantity: 1 };
+    cartItems.push(newItem);
+  }
+
+  displayCart();
+  updateTotal();
+}
+
+  // Tạo mới khối giỏ hàng và thêm sản phẩm vào đó
+  function addToCartZone(item) {
+    const cartContent = document.createElement("div");
+    cartContent.classList.add("cart-items"); // Tạo một khối cart-items mới cho từng sản phẩm
+    cartContent.innerHTML += `
+        <!-- Mã HTML của từng sản phẩm trong giỏ hàng -->
+        <div class="cart-content">
+        <div id="fit"><img src="${item.productImg}" alt="" class="cart-img"/></div>
+        <div class="detail-box">
+          <div class="cart-product-title">${item.title}</div>
+          <div class="cart-price">${item.price}</div>
+          <input type="number" value="${item.quantity}" min="1" class="cart-quantity">
+        </div>
+        <div class="box-trash">
+          <i class='bx bxs-trash-alt cart-remove'></i>
+        </div>
+      </div>
+      `;
+    cartZone.appendChild(cartContent); // Thêm cart-items mới vào cart-zone
+
+    cartContent.querySelector(".cart-remove").addEventListener("click", () => removeCartItem(item.title));
+    cartContent.querySelector(".cart-quantity").addEventListener("change", quantityChanged.bind(cartContent, item.title));
+    const inputElement = cartContent.querySelector(".cart-quantity");
+    inputElement.addEventListener("change", () => quantityChanged(inputElement, item.title));
+  }
+
+  // Hiển thị giỏ hàng
+  function displayCart() {
+    cartZone.innerHTML = ""; // Xóa hết nội dung cũ của cart-zone
+
+    cartItems.forEach((item) => {
+      addToCartZone(item); // Thêm từng sản phẩm vào cartZone
+    });
+  }
+
+  // Xóa sản phẩm khỏi giỏ hàng
+  function removeCartItem(title) {
+    cartItems = cartItems.filter((item) => item.title !== title);
+    displayCart();
+    updateTotal();
+  }
+
+  //xử lý text
+  function convertPriceToNumber(priceString) {
+    console.log("Converting priceString:", priceString);
+
+    // Xóa các ký tự không phải số (ví dụ: "đ", ".", ",")
+    const cleanedPriceString = priceString.replace(/[đ.,]/g, "");
+
+    console.log("Cleaned priceString:", cleanedPriceString);
+
+    // Chuyển đổi từ dạng chuỗi sang dạng số thực
+    const price = parseFloat(cleanedPriceString);
+
+    console.log("Converted price:", price);
+
+    return price;
+  }
+
+  // Cập nhật tổng số tiền trong giỏ hàng
+  function updateTotal() {
+    var total = 0;
+    cartItems.forEach((item) => {
+      // Kiểm tra xem giá gốc của sản phẩm đã chuyển đổi thành số hợp lệ chưa
+      const originalPrice = convertPriceToNumber(item.originalPrice);
+      if (!isNaN(originalPrice) && originalPrice > 0) {
+        total += originalPrice * item.quantity;
+      } else {
+        console.error("Error: Invalid original price for item: " + item.title);
+      }
+    });
+  
+    // Format total thành chuỗi tiền tệ
+    const formattedTotal = total.toLocaleString("vi-VN", { style: "currency", currency: "VND" });
+  
+    // Cập nhật vào class total-price
+    document.querySelector(".total-price").innerText = formattedTotal;
+  }
+
+//hàm đếm ngược sự kiện cho tất cả sản phẩm
+  function TimerEvent() {
+    var targetDate = new Date(timeEvent);
       var daysElements = document.querySelectorAll(".box_days span");
       var hoursElements = document.querySelectorAll(".box_hours span");
       var minsElements = document.querySelectorAll(".box_mins span");
@@ -586,6 +669,56 @@ document.addEventListener("DOMContentLoaded", function() {
       }
 
       setInterval(updateCountdownForEachProduct, 1000);
+  }
+
+  // Fetch dữ liệu từ JSON và hiển thị sản phẩm 
+  fetch("./json/dbBuyNow_FlashSale.json")
+    .then((response) => response.json())
+    .then((data) => {
+      showFlashSaleProducts(data.products);
+      TimerEvent();
     })
-    .catch(error => console.error('Error fetching best selling products:', error));
+    .catch((error) => console.error("Error fetching flash sale products:", error));
+  
+    fetch("./json/dbBuyNow_bestSelling.json")
+    .then((response) => response.json())
+    .then((data) => {
+      showBestSellingProducts(data.products);
+      TimerEvent();
+    })
+    .catch((error) => console.error("Error fetching best selling products:", error));
+    
+    fetch("./json/dbBuyNow_bestSelling.json")
+    .then((response) => response.json())
+    .then((data) => {
+      showRoastedCoffeeProducts(data.products);
+      TimerEvent();
+    })
+    .catch((error) => console.error("Error fetching roasted coffee products:", error));
+    
+    
+    fetch("./json/dbBuyNow_ConsumptionProducts.json")
+    .then((response) => response.json())
+    .then((data) => {
+      showConsumptionProducts(data.products);
+      TimerEvent();
+    })
+    .catch((error) => console.error("Error fetching roasted coffee products:", error));
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
