@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>The Coffee Shop</title>
 <link rel="stylesheet" href="./css/buynow.css">
-<link rel="stylesheet" href="./css/cart_buynow.css">
 <link rel="icon" href="img/img_design/logo.png">
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
 <!--------- CONTACT ------------->
@@ -62,7 +61,7 @@
                         </li>
                         <li>
                             <div class="box_logo">
-                                <a href="home.html"><img src="img/img_design/THE COFFEE SHOP.png" alt=""></a>
+                                <a href="index.html"><img src="img/img_design/THE COFFEE SHOP.png" alt=""></a>
                             </div>
                         </li>
                         <li class="box_search">
@@ -83,10 +82,34 @@
                         </li>
                         <li class="cart">
                             <div class="box_cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping fa-shake"></i>
                                 <p>Giỏ hàng</p>
                             </div>
                         </li>
+                        <!-- Cart -->
+                        <div class="wrapper_cart">
+                            <div class="wrap_title">
+                                <h2 class="cart-title">GIỎ HÀNG</h2>
+                            </div>
+                            <div class="cart_zone">
+                                <!-- đọc js các sản phẩm từ json ở đây nè -->
+                            </div>
+                            <div class="btn_exit">
+                                <i class='bx bx-x' id="close-cart"></i>  
+                            </div>
+                            <!---------- Total ------------>
+                            <div class="wrap_checkout">
+                                <div class="total">
+                                    <div class="total-title">Tổng:&nbsp </div>
+                                    <div class="total-price"> 0 đ</div>
+                                </div>
+                            <!---------- Buy Button ------------>
+                            <div class="btn_checkout">
+                                <button type="button" class="btn-buy">Thanh Toán</button>
+                            </div>
+                            <!---------- Cart Close ------------>
+                            </div>
+                        </div>
                     </ul>
                 </div> 
             </div>   
@@ -352,6 +375,5 @@
 </body>
 <script src="./js/buynow.js"></script>
 <script src="./js/chatbot.js"></script>
-<!-- <script src="./js/cart_buynow.js"></script> -->
 <script src="https://kit.fontawesome.com/7a975bba38.js" crossorigin="anonymous"></script>
 </html>

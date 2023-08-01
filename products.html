@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="./css/filter.css">
 <link rel="icon" href="img/img_design/logo.png">
 <!--------- CONTACT ------------->
+<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>    
 <link rel="stylesheet" href="./css/chatbot.css">
      <!-- GOOGLE FONT ICON -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -79,10 +80,33 @@
                         </li>
                         <li class="cart">
                             <div class="box_cart">
-                                <i class="fa-solid fa-cart-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping fa-shake"></i>
                                 <p>Giỏ hàng</p>
                             </div>
                         </li>
+                        <div class="wrapper_cart">
+                            <div class="wrap_title">
+                                <h2 class="cart-title">GIỎ HÀNG</h2>
+                            </div>
+                            <div class="cart_zone">
+                                <!-- đọc js các sản phẩm từ json ở đây nè -->
+                            </div>
+                            <div class="btn_exit">
+                                <i class='bx bx-x' id="close-cart"></i>  
+                            </div>
+                            <!---------- Total ------------>
+                            <div class="wrap_checkout">
+                                <div class="total">
+                                    <div class="total-title">Tổng:&nbsp </div>
+                                    <div class="total-price"> 0 đ</div>
+                                </div>
+                            <!---------- Buy Button ------------>
+                            <div class="btn_checkout">
+                                <button type="button" class="btn-buy">Thanh Toán</button>
+                            </div>
+                            <!---------- Cart Close ------------>
+                            </div>
+                        </div>
                     </ul>
                 </div> 
             </div>   
@@ -129,6 +153,7 @@
             </div> -->
         </div>
     </div>
+    <div id="b-to-top"></div>
     <div class="flashSale">
         <div class="box_title_sale">
             <div class="title_sale">
@@ -1019,6 +1044,9 @@
             </div>
         </div>
     </div>
+    <div class="go_top">
+        <a href="#b-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+   </div>
     <!--------- CONTACT ----------->
    <div>
         <button class="chatbot-toggler">
@@ -1043,7 +1071,6 @@
     </div>
 </body>
 <script src="./js/filter.js"></script>
-<script src="./js/buynow.js"></script>
-<script src="js/chatbot.js" defer></script>
+<script src="js/chatbot.js"></script>
 <script src="https://kit.fontawesome.com/7a975bba38.js" crossorigin="anonymous"></script>
 </html>
