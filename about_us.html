@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Về Chúng Tôi</title>
     <link rel="icon" href="img/img_design/logo.png">
-    <link href="menu_page.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/menu.css">
+    <!-- <link rel="stylesheet" href="./css/menu.css"> -->
     <link rel="stylesheet" href="./css/about_us.css">
-    <link rel="stylesheet" href="./css/about_us1.css">
 
     <!--------- CONTACT ------------->
     <link rel="stylesheet" href="./css/chatbot.css">
@@ -50,6 +48,23 @@
                     </ul> 
                 </div>
             </div>
+            <div class="menu_qc">                
+                <i class="fa-solid fa-bars fa-beat"></i>
+                <p>menu</p>
+                <div class="quick_choices">
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house"></i></a></li>
+                        <li><a href="home.html">Quán cà phê</a></li>
+                        <li><a href="menu.html">Thực đơn</a></li>
+                        <li><a href="maintainPage_home.html">Tin tức</a></li>
+                        <li><a href="about_us.html">Về chúng tôi</a></li>
+                        <li><a href="maintainPage_home.html">Nghề nghiệp</a></li>
+                        <li><a href="buynow.html">Mua ngay</a></li>
+                    </ul>
+                    <div class="pseudo">
+                    </div>
+                </div>                
+        </div>
     </div>
 </header>
     <!-------- HOME START-------->
@@ -130,7 +145,7 @@
             <h2> ĐẬM VỊ TRÀ, THƠM MÁT NGÀY HÈ</h2>
             <h3>Chiết xuất từ lá trà đạt chất lượng tươi mới, mang đến hương vị thanh mát</h2>
             </div>  
-        <div>
+        <div class="img_menu">
             <div class="main-menu"> 
                 <img src="img/img_design/COFFEE/trà/dao.jpg" class="img-feature"/>
                 
@@ -150,7 +165,7 @@
                 <h2>ĐẬM ĐÀ HƯƠNG VỊ</h2>
                 <h3> Chiết xuất từ hạt cafe đặc sản chất lượng cao arabica</h3>
                 </div>  
-            <div>
+            <div class="img_menu">
                 <div class="main-menu"> 
                     <img src="img/img_design/COFFEE/pha máy/cappu.jpg" class="img-feature"/>
                     
@@ -163,7 +178,7 @@
             </div>
         </div>
         <div class="menu_con_sub"> 
-            <div>
+            <div class="img_menu">
                 <div class="main-menu"> 
                     <img src="img/img_design/COFFEE/đá xay/matcha-da-xay.jpg" class="img-feature"/>
                     
@@ -182,7 +197,7 @@
             
     </section>
     <section class="menu_container" id="cake_menu">
-        <div>
+        <div class="img_menu">
             <div class="main-menu"> 
                 <img src="img/img_design/COFFEE/cake/tira.jpg" class="img-feature"/>
                
@@ -315,6 +330,7 @@
       
       
 </body>
+<script src="js/menu.js" ></script>
 <script src="js/chatbot.js" defer></script>
 
 </html> 

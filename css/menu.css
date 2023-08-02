@@ -12,12 +12,13 @@ html{
 .banner{
     width:80%;
     margin: 0 auto;
-    margin-top: -5px;
+    /* margin-top: 5em; */
+    margin-top: 10%;
 }
 
 .banner img{
     width:100%;
-    height:450px;
+    height:100%;
 }
 .list ul li:hover{
     background: black;
@@ -147,4 +148,37 @@ html{
     background:#2b2640;
 }
 
+/* Màn hình máy tính xách tay và máy tính để bàn */
+@media screen and (min-width: 992px)  and (max-width: 1199px) {
+    /* Thay đổi kiểu dáng và bố cục cho màn hình máy tính xách tay và máy tính để bàn */
+    .banner{
+    width:100%;
+    margin: 0 auto;
+    margin-top: 15%;
+}
+}
+/* Thiết bị máy tính bảng */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    /* Thay đổi kiểu dáng và bố cục cho thiết bị máy tính bảng */
+    .banner{
+    width:100%;
+    margin: 0 auto;
+    margin-top: 20%;;
+}
+}
+
+/* Thiết bị di động nhỏ */
+@media screen and (max-width: 575px) {
+    /* Thay đổi kiểu dáng và bố cục cho thiết bị di động nhỏ */
+    .banner{
+    width:100%;
+    margin: 0 auto;
+    margin-top: -10%;
+}
+
+    .banner img{
+    width:100%;
+    height:100%;
+}
+}
 
