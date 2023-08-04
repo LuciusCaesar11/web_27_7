@@ -688,7 +688,7 @@ function addToCart(title, price, productImg, originalPrice) {
     })
     .catch((error) => console.error("Error fetching best selling products:", error));
     
-    fetch("./json/dbBuyNow_bestSelling.json")
+    fetch("./json/dbBuyNow_RoastedCoffee.json")
     .then((response) => response.json())
     .then((data) => {
       showRoastedCoffeeProducts(data.products);
