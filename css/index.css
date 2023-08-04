@@ -159,12 +159,16 @@ main{
 }
 
 .footer{
-    padding: 10px;
+    padding: 20px;
+    margin: 0 5%;
     
 }
 
 .col{
     width:25%;
+}
+.marge{
+    margin-left: -5%;
 }
 .col h4{
     font-size:1.2rem;
@@ -231,6 +235,7 @@ main{
     background:#2b2640;
 
 }
+
 .loading 
 {
     top:0;
@@ -293,9 +298,16 @@ main{
     display:none;
 }
 /* Màn hình máy tính xách tay và máy tính để bàn */
-@media screen and (min-width: 992px)  {
+@media screen and (min-width: 992px) and (max-width: 1199px) {
     /* Thay đổi kiểu dáng và bố cục cho màn hình máy tính xách tay và máy tính để bàn */
-    
+    .wrapper_logo{
+        margin-left:2em;
+    }
+    .container{
+        margin-right:2em;
+        margin-left:-2em;
+
+    }
 }
 
 /* Thiết bị máy tính bảng */
@@ -312,6 +324,7 @@ main{
     .image_slider{
         margin-top:5%;
     }
+    
 
 }
 
@@ -331,6 +344,44 @@ main{
     .image_slider{
         margin-top:8%;
     }
+    
+    .footer {
+        padding: 20px;
+        
+      }
+    
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .col {
+        margin-bottom: 20px;
+      }
+      .marge{
+        margin-left:unset;
+       margin-top: 10px;
+    }
+    
+      .col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    
+      .col.none {
+        display: none;
+      }
+    
+      .social {
+        margin-top: 10px;
+      }
+    
+      .social a {
+        margin-top:10px;
+        margin-right: 10px;
+      }
     
 }
 
@@ -465,6 +516,43 @@ main{
     .col1, .col2{
         width:100%;
     }
+    .footer {
+        padding: 20px;
+        
+      }
+    
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    
+      .col {
+        margin-bottom: 20px;
+      }
+      .marge{
+        margin-left:unset;
+        margin-top:-55px;
+    }
+    
+      .col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    
+      .col.none {
+        display: none;
+      }
+    
+      .social {
+        margin-top: 10px;
+      }
+    
+      .social a {
+        margin-top:10px;
+        margin-right: 10px;
+      }
     
     
 }

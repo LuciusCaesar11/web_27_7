@@ -11,9 +11,7 @@ html{
 }
 .banner{
     width:80%;
-    margin: 0 auto;
-    /* margin-top: 5em; */
-    margin-top: 10%;
+    margin-top: 15px;
 }
 
 .banner img{
@@ -74,23 +72,28 @@ html{
     font-size: 30px;
 }
 
-/* -------------FOOTER----------------- */
+/* ----------  FOOTER ------------- */
 .main{
     display:flex;
     flex-wrap: wrap;
+
 }
 
 .footer{
-    padding:10px 0;
+    padding: 20px;
+    margin: 0 5%;
     
 }
 
 .col{
     width:25%;
 }
+.marge{
+    margin-left: -5%;
+}
 .col h4{
     font-size:1.2rem;
-    color:var(--main-color);
+    color:orangered;
     margin-bottom: 25px;
     position: relative;
     text-transform: uppercase;
@@ -110,12 +113,16 @@ html{
 .col ul li:not(last-child){
     margin-bottom: 15px;;
 }
+.col ul li {
+    list-style-type: none;
+}
 .col ul li a{
     color:#fff;
     font-size: 1.1rem;
     display:block;
     text-transform: capitalize;
     transition:.4s;
+    text-decoration: none;
 }
 .col ul li a:hover{
     color:rgb;
@@ -131,21 +138,23 @@ html{
     height:40px;
     width:40px;
     background:#ee8652;
-    color:var(--text-color);
+    color:#1e1c2a;
     display:inline-flex;
     align-items:center;
     justify-content:center;
     font-size:1.5rem;
     border-radius: 50%;
     transition:.4s;
+    text-decoration: none;
 }
 .col .social a:hover{
     transform:scale(1.2);
-    color:var(--bg-color);
+    color:rgb(247, 238, 238);;
     background:#ee8652;
 }
 #contact{
     background:#2b2640;
+
 }
 
 /* Màn hình máy tính xách tay và máy tính để bàn */
@@ -153,8 +162,7 @@ html{
     /* Thay đổi kiểu dáng và bố cục cho màn hình máy tính xách tay và máy tính để bàn */
     .banner{
     width:100%;
-    margin: 0 auto;
-    margin-top: 15%;
+    /* margin-top: 15px; */
 }
 }
 /* Thiết bị máy tính bảng */
@@ -162,23 +170,107 @@ html{
     /* Thay đổi kiểu dáng và bố cục cho thiết bị máy tính bảng */
     .banner{
     width:100%;
-    margin: 0 auto;
-    margin-top: 20%;;
+    /* margin-top: 50px; */
 }
 }
+/* Thiết bị di động */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+    /* Thay đổi kiểu dáng và bố cục cho thiết bị di động */
+    .banner{
+        width:100%;
+        /* margin-top: 100px; */
+    }
+    .footer {
+        padding: 20px;
+        
+      }
+    
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+      .col {
+        margin-bottom: 20px;
+      }
+      .marge{
+        margin-left:unset;
+       margin-top: 10px;
+    }
+    
+      .col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    
+      .col.none {
+        display: none;
+      }
+    
+      .social {
+        margin-top: 10px;
+      }
+    
+      .social a {
+        margin-top:10px;
+        margin-right: 10px;
+      }
+    
+}
+
 
 /* Thiết bị di động nhỏ */
 @media screen and (max-width: 575px) {
     /* Thay đổi kiểu dáng và bố cục cho thiết bị di động nhỏ */
     .banner{
     width:100%;
-    margin: 0 auto;
-    margin-top: -10%;
+    margin-top: -50px;
 }
 
     .banner img{
     width:100%;
     height:100%;
 }
+.footer {
+    padding: 20px;
+    
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col {
+    margin-bottom: 20px;
+  }
+  .marge{
+    margin-left:unset;
+    margin-top:-55px;
+}
+
+  .col h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .col.none {
+    display: none;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+
+  .social a {
+    margin-top:10px;
+    margin-right: 10px;
+  }
+
+
 }
 

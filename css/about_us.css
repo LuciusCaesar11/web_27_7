@@ -25,6 +25,7 @@
 body{
     color:var(--text-color);
     background:#fff;
+    margin-top:10%;
 }
 header{
     width:100%;
@@ -33,6 +34,55 @@ header{
     top: 0;
     left: 0;
     z-index: 999;
+}
+.wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background: #000;
+    margin-left:2em;
+}
+
+.wrapper_logo{
+    background: #000;
+    transform: translate(-50px,0);
+}
+
+.wrapper_logo img{
+    background:#000;
+    width:110px;
+    height:84.25px;
+    padding: 5px 5px;
+    padding-top: 10px;
+    border-radius: 50%;
+}
+
+.list{
+    background: #000;
+}
+
+.list ul{
+    display: flex;
+}
+
+.list ul li{
+    list-style-type: none;
+    transition: 0.3s ease-in;
+}
+
+.list ul li:hover a{
+    color:#ff702a;
+}
+
+
+
+.list ul li a{
+    margin-right: 10px;
+    padding:10px 20px;
+    display: block;
+    text-decoration: none;
+    color:white;
+    text-transform: uppercase;
 }
 .container_search{
     background:#000;
@@ -246,8 +296,111 @@ section{
 .menu_qc{
     display:none;
 }
+html{
+    scroll-behavior: smooth;
+}
+  .go_top{
+    position:fixed;
+    width:50px;
+    height:50px;
+    background:#ff702a;
+    bottom:40px;
+    right:10px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color:white;
+    font-size: 22px;
+    border-radius: 50%;
+}
+.go_top a{
+    font-size: 50px;
+}
+/* ----------  FOOTER ------------- */
+.main{
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+.footer{
+    padding: 20px;
+    
+}
+
+.footer .col{
+    width:25%;
+}
+.marge{
+    margin-left: -5%;
+}
+.footer .col h4{
+    font-size:1.2rem;
+    color:orangered;
+    margin-bottom: 25px;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer .col h4:before{
+    content:"";
+    position:absolute;
+    height:2px;
+    width:50px;
+    left:0;
+    bottom:-8px;
+    background:#ee8652;
+}
+.footer .col h4.none{
+    visibility:hidden;
+}
+.footer  .col ul li:not(last-child){
+    margin-bottom: 15px;;
+}
+.footer  .col ul li {
+    list-style-type: none;
+}
+.footer  .col ul li a{
+    color:#fff;
+    font-size: 1.1rem;
+    display:block;
+    text-transform: capitalize;
+    transition:.4s;
+    text-decoration: none;
+}
+.footer  .col ul li a:hover{
+    color:rgb;
+    transform:translateY(-12px)
+}
+.col .social{
+    width:220px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.footer  .col .social a{
+    height:40px;
+    width:40px;
+    background:#ee8652;
+    color:#1e1c2a;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    border-radius: 50%;
+    transition:.4s;
+    text-decoration: none;
+}
+.footer .col .social a:hover{
+    transform:scale(1.2);
+    color:rgb(247, 238, 238);;
+    background:#ee8652;
+}
+#contact{
+    background:#2b2640;
+
+}
 /* Màn hình máy tính xách tay và máy tính để bàn */
-@media screen and (min-width: 992px)  {
+@media screen and (min-width: 992px)  and (max-width: 1199px){
     /* Thay đổi kiểu dáng và bố cục cho màn hình máy tính xách tay và máy tính để bàn */
     
 }
@@ -266,7 +419,12 @@ section{
     .image_slider{
         margin-top:5%;
     }
-
+    .footer .col {
+        margin:0 10px;
+      }
+    .none{
+        margin-top: 22px;
+    }
 }
 
 /* Thiết bị di động */
@@ -285,7 +443,43 @@ section{
     .image_slider{
         margin-top:8%;
     }
+    .footer {
+        padding: 20px;
+        
+      }
     
+    .footer .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    
+    .footer .col {
+        margin-bottom: 20px;
+      }
+      .marge{
+        margin-left:unset;
+       margin-top: 10px;
+    }
+    
+    .footer  .col h4 {
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    
+    .footer  .col.none {
+        display: none;
+      }
+    
+      .social {
+        margin-top: 10px;
+      }
+    
+      .social a {
+        margin-top:10px;
+        margin-right: 10px;
+      }
 }
 
 /* Thiết bị di động nhỏ */
@@ -446,4 +640,41 @@ section{
     flex: 1;
     margin: 5px;
 }
+.footer {
+    padding: 20px;
+    
+  }
+
+  .footer  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer  .col {
+    margin-bottom: 20px;
+  }
+  .marge{
+    margin-left:unset;
+    margin-top:-55px;
+}
+
+.footer  .col h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .footer  .col.none {
+    display: none;
+  }
+
+  .social {
+    margin-top: 10px;
+  }
+
+  .social a {
+    margin-top:10px;
+    margin-right: 10px;
+  }
 }

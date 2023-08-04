@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=REM:wght@500&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "REM";
 }
+
 
 /* ---- Cart ---- */
 .btn_exit{
@@ -890,7 +892,8 @@ header{
     overflow-x: hidden;
     overflow-y: hidden;
 }
-  
+
+
 .product {
     margin: 0 10px;
     flex: 0 0 calc(20% - 20px);
@@ -1091,3 +1094,116 @@ html{
     font-size: 22px;
     border-radius: 50%;
 };
+
+/* ----------  FOOTER ------------- */
+
+#contact{
+    background-color: #000;
+    
+}
+.footer{
+    background: #000;
+    background-size: cover;
+    margin:0 10%;
+}
+.footer .main {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer .col {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.footer h4 {
+    margin-bottom: 10px;
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer .social {
+    display: flex;
+}
+.footer .col a{
+    color:#f5f5f5;
+    text-decoration: none;
+}
+.footer .col h4{
+    font-size:1.2rem;
+    color:orangered;
+    margin-bottom: 25px;
+    position: relative;
+    text-transform: uppercase;
+}
+.footer .col h4:before{
+    content:"";
+    position:absolute;
+    height:2px;
+    width:50px;
+    left:0;
+    bottom:-8px;
+    background:#ee8652;
+}
+.footer .marge h4{
+    visibility: hidden;
+}
+.footer .marge {
+    margin-left: -10% ;
+}
+
+.footer .col ul li:not(last-child){
+    margin-bottom: 15px;;
+}
+.footer.col ul li {
+    list-style-type: none;
+}
+.footer .col ul li a{
+    color:#fff;
+    font-size: 1.1rem;
+    display:block;
+    text-transform: capitalize;
+    transition:.4s;
+    text-decoration: none;
+}
+.footer .col ul li a:hover{
+    color:rgb;
+    transform:translateY(-12px)
+}
+.footer .col .social{
+    width:220px;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+}
+.footer .col .social a{
+    height:40px;
+    width:40px;
+    background:#ee8652;
+    color:#1e1c2a;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.5rem;
+    border-radius: 50%;
+    transition:.4s;
+    text-decoration: none;
+}
+.footer .col .social a:hover{
+    transform:scale(1.2);
+    color:rgb(247, 238, 238);;
+    background:#ee8652;
+}
+#contact{
+    background:#000;
+    padding-top: 20px;
+};
+
+
