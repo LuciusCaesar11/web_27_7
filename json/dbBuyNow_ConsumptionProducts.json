@@ -7,13 +7,13 @@
         "text_content2": "245.000đ"
       },
       {
-        "image_link": "img/img_design/item/ly giữ nhiệt.jpg",
+        "image_link": "img/img_design/item/ly750.jpg",
         "content": "[Tặng 1 Túi Giữ Nhiệt] Ly Giữ Nhiệt 48h (750ml)",
         "text_content1": "210.000đ",
         "text_content2": "265.000đ"
       },
       {
-        "image_link": "img/img_design/item/ly sứ.png",
+        "image_link": "img/img_design/item/lysu.png",
         "content": "Ly Sứ Chất Liệu MOSAIC Họa Tiết",
         "text_content1": "210.000đ",
         "text_content2": "265.000đ"
@@ -25,7 +25,7 @@
         "text_content2": "345.000đ"
       },
       {
-        "image_link": "img/img_design/item/phin đỏ.jpg",
+        "image_link": "img/img_design/item/phinred.jpg",
         "content": "[Tặng Voucher Giảm Giá 20%] Bộ Pha Phin Cafe Đỏ Thời Thượng",
         "text_content1": "100.000đ",
         "text_content2": "145.000đ"
@@ -36,6 +36,7 @@
         "text_content1": "300.000đ",
         "text_content2": "345.000đ"
       }
+      
     ]
   }
   
