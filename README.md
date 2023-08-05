@@ -34,7 +34,7 @@ We welcome contributions from the community to enhance and improve our café's w
 - LuciusCaesar11
 
 ## Contact Us:
-If you have any questions, suggestions, or feedback, feel free to reach out to us at contact@cafeexample.com. We value your input and look forward to hearing from you!
+If you have any questions, suggestions, or feedback, feel free to reach out to us at hnt438@gmail.com or 2004phuonggiao@gmail.com . We value your input and look forward to hearing from you!
 
 Thank you for visiting our café's website repository. Enjoy exploring the pages and experiencing the world of our café online.
 
