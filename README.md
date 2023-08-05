@@ -20,6 +20,7 @@ Here you will find the source code and assets for our cafe's web pages. Below is
 5. **Career Page**: Explore exciting career opportunities and join our team of dedicated coffee enthusiasts.
 6. **Buy Now Page**: Experience the convenience of online ordering. Browse our products and have your favorites delivered straight to your home.
 7. **Under Maintenance Pages**: We're working behind the scenes to elevate your experience. These pages are currently undergoing maintenance as we strive to bring you the best.
+8. Café Locations Page: Discover the various branches of our café and locations.
 
 ## Contributing:
 We welcome contributions from the community to enhance and improve our café's website. If you're interested in contributing, please follow these steps:
