@@ -270,7 +270,126 @@ html{
     margin-top:10px;
     margin-right: 10px;
   }
+  .menu_qc{
+    width:100px;
+    background: #000;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    margin-left: -100%;
+}
 
+.menu_qc i{
+    color: #ff702a;
+    cursor: pointer;
+}
 
+.menu_qc p{
+    cursor: pointer;
+}
+
+.quick_choices{
+    display: none;
+    position: absolute;
+    top: 100%;
+    background: whitesmoke;
+    z-index: 999;
+    border-radius: 3px;
+    left:9%;
+    box-shadow: 2px 2px 5px rgb(225, 220, 220);
+}
+
+.pseudo{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: whitesmoke;
+    top: -1%;
+    left:2%;
+    transform: rotate(-45deg);
+}
+
+.quick_choices ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.quick_choices ul li{
+    padding: 8px 50px;
+    color: #000;
+    text-transform: uppercase;
+    padding-left: 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.quick_choices ul li:hover a{
+    /* color: #b5313a; */
+    color: #ff702a;
+}
+
+.quick_choices ul li:not(:nth-child(7)):hover{
+    /* color: #b5313a; */
+    color: #ff702a;
+}
+
+.quick_choices ul li a{
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.box_icon_menu{
+    transform: translateX(40px);
+}
+
+/* .quick_choices ul li:first-child{
+    padding-top: 15px;
+    border-bottom: 1px solid #aea5a5;
+} */
+
+/* .quick_choices ul li a:nth-child(2)
+{
+    color: #ff702a;
+} */
+
+.quick_choices ul li:nth-child(7)
+{
+    font-size: 12px;
+}
+
+.quick_choices ul li:last-child{
+    padding-bottom: 20px;
+    text-transform: none;
+}
+
+.box_icon_menu span{
+    font-size: 20px;
+}
+.menu_qc p{
+    margin-top: 5px;
+    font-size: 12px;
+    color: aliceblue;
+    text-transform: uppercase;
+}
+
+.menu_qc i{
+    font-size: 20px;
+}
+.menu_qc .quick_choices .mini_icon{
+    font-size:15px;
+}
+#mini_menu{
+    display:none;
+}
+#mini_menu li{
+    border:none;
+
+}
 }
 
