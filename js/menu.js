@@ -16,3 +16,33 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
   });
+
+
+// Lấy tham chiếu đến mini_icon và mini_menu
+const miniIcon = document.querySelector('.mini_icon');
+const miniMenu = document.getElementById('mini_menu');
+
+// Thêm sự kiện click vào mini_icon
+miniIcon.addEventListener('click', (event) => {
+    // Ngăn sự kiện click lan ra các phần tử cha
+    event.stopPropagation();
+
+    // Kiểm tra trạng thái của mini_menu
+    const isMenuHidden = miniMenu.style.display === 'none' || miniMenu.style.display === '';
+    
+    // Nếu mini_menu đang ẩn, hiển thị nó
+    if (isMenuHidden) {
+        miniMenu.style.display = 'block';
+    } else {
+        // Ngược lại, ẩn mini_menu
+        miniMenu.style.display = 'none';
+    }
+});
+
+// Thêm sự kiện click vào document để ẩn mini_menu khi click bất kỳ nơi nào trên trang
+document.addEventListener('click', (event) => {
+    // Kiểm tra nếu sự kiện click xảy ra ngoài khối mini_menu thì ẩn nó
+    if (!miniMenu.contains(event.target)) {
+        miniMenu.style.display = 'none';
+    }
+});
