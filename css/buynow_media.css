@@ -188,57 +188,66 @@
 
 /* Thiết bị di động nhỏ */
 @media screen and (max-width: 575px) {
-    .banner_buynow{
-        width:220%;
-    }
-    .banner{
-        width:90%;
-    }
+   .navbar ul{
+    width:80%;
+   }
+   .menu{
+    margin-left:-13%;
+   }
     .box_search{
         display:none;
     }
     .box_logo{  
-        width:100%;
+        display:none;
     }
-    .account{
-        margin-left: 1%;
+    .banner_buynow{
+        display:none;
     }
-       
-    .list ul li{
-        padding:9px 9px;
-        max-width: 55%;
-    }  
-    
-    .list1 ul{
-        margin-left: 15%;;
-        align-items: center;
+    .boxItem{
+        display:none;
     }
-    
-    .list1 ul li{
-        padding: 10px 20px;
-        margin: 0 10px;
-        width:100%;
-        height:100%;
-        
+    .cart{
+        margin-left: -1.5%;
+        margin-right:1.5%;
     }
-    .list1 ul li a{
-        text-decoration: none;
-        font-size: 15px;
-        color: #ff702a;
-        font-weight: bold;
+    #mini{
+        visibility: hidden;
+    }
+    .box_utilities{
+        display:flex;
+        justify-content: space-between;;
+    }
+    .box_utilities ul{
+        margin-left:-20%;
+    }
+    .box_utilities ul li a{
+        margin: .5em;
+    }
+    .box_utilities ul li a img {
+        width: 40px;
+    }
+    .box_voucher {
+        flex-wrap: wrap;
+        justify-content: space-between; /* Hiển thị 2 hộp voucher trên hàng đầu tiên */
     }
 
-    .flashSale{
-        width:100%;
+    .voucher {
+        width: unset; 
+        max-width: unset; 
+       
     }
     .box_timeSale{
-        width:220%;
+        width:100%;
     }
-    .boxItem, .boxlist,.link, #contact{
-        width:220%    ;
+    .btn_flash{
+        margin-top: 5%;
     }
+    .box_btn_selling button{
+        padding:10px 20px;
+    }
+    
     .box_product{
-        width: 200%;
+        width: 100%;
     }
     
     .wrapper_cart{
@@ -284,38 +293,15 @@
         margin-top:10px;      
       }
      .go_top{
-        right:10%;
+        right:50%;
      }
-     .box_utilities ul li{
-        margin:0 2%;
+     .wrapper_cart{
+        width:40%;
+        height:20vh;
      }
-    .box_utilities ul li a img{
-        width:80px;
+     .wrapper_cart.active{
+        right:43%;
     }
-    .title_sale .box_title{
-        text-align: center;
-    }
-    .box_voucher{
-            width:150%;
-            margin-left:100%;
-    }
-    .box_btn_selling
-    {
-        width:100%;
-        margin-left:60%;
-    }
-    .box_btn_view_bestSelling{
-        width:100%;
-        margin-left:60%;
-    }
-    .products {
-        margin:0 15%;
-        display: flex;
-        flex-wrap:wrap;
-        width: 100%;
-    }
-    .block_prev, .block_next{
-        display: none;
-    }
+
     
 }   

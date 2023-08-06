@@ -188,65 +188,42 @@
 /* Thiết bị di động nhỏ */
 @media screen and (max-width: 575px) {
    
-    .box_search{
-        display:none;
-    }
-    .box_logo{  
-        width:110%;
-    }
-    .account{
-        margin-left: 1%;
-    }
-       
-    .list ul li{
-        padding:9px 9px;
-        max-width: 55%;
-    }  
-    
-    .list1 ul{
-        margin-left: 15%;;
-        align-items: center;
-    }
-    
-    .list1 ul li{
-        padding: 10px 20px;
-        margin: 0 10px;
-        width:120%;
-        height:100%;
-        
-    }
-    .list1 ul li a{
-        text-decoration: none;
-        font-size: 15px;
-        color: #ff702a;
-        font-weight: bold;
-    }
-    .boxItem, .boxlist,.link, #contact{
-        width:200%    ;
-    }
-    .banner_buynow{
-        width:200%;
-    }
-    
-    .box_product{
-        width: 200%;
-    }
-    .wrapper_product{
-        width:100%;
-        text-align: center;
-    }
-    .product img{
-        width:70%;
-    }
-    .wrapper_cart{
-        width:40%;
-        height:60%;
-    }
-    .cart-img {
-        max-height: 90%; /* Adjust this value to your preference */
-        width: 90%; /* Ensure the width scales proportionally with the height */
-        object-fit: cover;
-    }
+    .navbar ul{
+        width:80%;
+       }
+       .menu{
+        margin-left:-13%;
+       }
+        .box_search{
+            display:none;
+        }
+        .box_logo{  
+            display:none;
+        }
+        .banner_buynow{
+            display:none;
+        }
+        .boxItem{
+            display:none;
+        }
+
+        #mini{
+            visibility: hidden;
+        }
+        .box_product{
+            width: 100%;
+        }
+        .wrapper_product{
+            width:500%;
+            text-align: center;
+        }
+        .product img{
+            width:70%;
+        }
+        .wrapper_cart{
+            width:40%;
+            height:60%;
+        }
     .footer{
         padding:20px;
     }
@@ -281,8 +258,15 @@
         margin-top:10px;      
       }
      .go_top{
-        right:10%;
+        right:50%;
      }
+     .wrapper_cart{
+        width:40%;
+        min-height:20vh;
+     }
+     .wrapper_cart.active{
+        right:40%;
+    }
 
      
 }
