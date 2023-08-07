@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="./css/buynow.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="./css/filter.css">
+<link rel="stylesheet" href="./css/filter_media.css">
 <link rel="icon" href="img/img_design/logo.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
@@ -85,7 +88,7 @@
     </header>
     <div class="boxlist">
         <div class="list">
-            <ul>
+            <ul id="mini">
                 <li><a href=""><i class="fa-solid fa-house"></i></a></li>
                 <li><a href="buynow.html">Trang chủ</a></li>
                 <li><a href="flashsale.html">FLASH SALE</a></li>
@@ -96,63 +99,96 @@
         </div>
     </div>
 
-    <section class="login_and_register">
-        <div class="wrapper_img">
-            <img src="img/login.png">
-        </div>
-        <div class="wrapper_login">
-           
-            <div class="form-box login">
+    <section class="container forms">
+        <div class="form login">
+            <div class="form-content">
                 <h2>Login</h2>
                 <form action="#">
-                    <div class="input-box">
-                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-                        <input type="email" required>
-                        <label>Email</label>
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input">
                     </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                        <input type="password" required>
-                        <label>Password</label>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
-                    <div class="remember-forgot">
-                         <label><input type="checkbox">Remember me</label>
-                         <a href="#">Forgot Password</a>
-                    </div>  
-                    <button type="submit" class="btn">Login</button>
-                    <div class="login-register">
-                        <p>Don't have an account?<a href="#" class="register-link">Register</a></p>
+
+                    <div class="form-link">
+                        <a href="#" class="forgot-pass">Fotgot password</a>
+                    </div>
+                    
+                    <div class="field input-field">
+                        <button>Login</button>
                     </div>
                 </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link signup-link">Signup</a></span> 
+                </div>
             </div>
-    
-            <div class="form-box register">
-                <h2>Registration</h2>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="img/img_design/google.jpg" alt="" class="google-img">                
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form signup">
+            <div class="form-content">
+                <h2>Signup</h2>
                 <form action="#">
-                    <div class="input-box">
-                        <span class="icon"><i class="fa-regular fa-user"></i></span>
-                        <input type="text" required>
-                        <label>Username</label>
+                    <div class="field input-field">
+                        <input type="email" placeholder="Email" class="input">
                     </div>
-                    <div class="input-box">
-                        <span class="icon"><i class="fa-regular fa-envelope"></i></span>
-                        <input type="email" required>
-                        <label>Email</label>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bx-lock-alt'></i></span>
-                        <input type="password" required>
-                        <label>Password</label>
+
+                    <div class="field input-field">
+                        <input type="password" placeholder="Password" class="password">
+                        <i class='bx bx-hide eye-icon'></i>
                     </div>
-                    <div class="remember-forgot">
-                         <label><input type="checkbox">I argee to the terms & conditions</label>
-                    </div>  
-                    <button type="submit" class="btn">Register</button>
-                    <div class="login-register">
-                        <p>Already have an account?<a href="#" class="login-link">Login</a></p>
+                    
+                    <div class="field input-field">
+                        <button>Signup</button>
                     </div>
                 </form>
+
+                <div class="form-link">
+                    <span>Already have an account? <a href="#" class="link login-link">Login</a></span> 
+                </div>
             </div>
+
+            <div class="line"></div>
+
+            <div class="media-options">
+                <a href="#" class="field facebook">
+                    <i class='bx bxl-facebook facebook-icon'></i>
+                    <span>Login with Facebook</span>
+                </a>
+            </div>
+
+            <div class="media-options">
+                <a href="#" class="field google">
+                    <img src="img/img_design/google.jpg" alt="" class="google-img">                
+                    <span>Login with Google</span>
+                </a>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
@@ -204,8 +240,8 @@
                 
             </div>
         </div>
-      </section>
+    </section>
+    <script src="js/login.js"></script>
     </body>
- <script src="js/login.js"></script>
  
 </html>
